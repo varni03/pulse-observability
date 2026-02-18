@@ -8,11 +8,11 @@ It stores events in Postgres (including JSON attributes) and exposes a simple HT
 ---
 ## Why I built this
 
-I wanted to better understand how observability systems work, beyond using existing tools. Most logging platforms abstract away the ingestion and storage layers, so I built Pulse to explore those pieces directly.
+I built Pulse to better understand how observability systems work at a systems level. Instead of relying on existing logging platforms, I wanted to implement the ingestion, storage, and query layers myself and see the tradeoffs firsthand.
 
-This project focuses on the core mechanics of a logging backend: accepting structured events over HTTP, normalizing and storing them efficiently, and supporting flexible queries over time windows and filters. Building it from scratch helped me understand tradeoffs around schema design, indexing for time-series data, and handling semi-structured JSON attributes in Postgres.
+The goal was to explore how structured logs move through a backend: from HTTP ingestion, to schema design and indexing, to efficient querying over time windows and filters. Working on this helped me think more deeply about time-series data modeling, JSON storage in Postgres, and building simple but extensible infrastructure.
 
-Pulse is intentionally minimal, but it serves as a foundation for experimenting with observability features like metrics, alerting, and trace correlation.
+Pulse is intentionally small, but it provides a base for experimenting with ideas like metrics, alerting, and trace correlation.
 
 --- 
 
