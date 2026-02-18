@@ -1,15 +1,17 @@
 # Pulse
 
+> A lightweight observability backend for ingesting and querying structured logs.
+
 Pulse is a minimal observability backend that ingests structured logs and lets you query them using filters and time windows.  
 It stores events in Postgres (including JSON attributes) and exposes a simple HTTP API.
 
 ---
 
 ## What it does
-- Ingest structured log events (`service`, `level`, `message`, optional `trace_id` / `span_id`, and JSON attributes)
-- Query recent logs with filters: `service`, `level`, `since`, `until`, `limit`
-- Store data in Postgres with indexes for fast time-based queries
 
+- Ingest structured log events (service, level, message, optional trace_id / span_id, and JSON attributes)
+- Query recent logs with filters: service, level, since, until, limit
+- Store data in Postgres with indexes for fast time-based queries
 ---
 
 ## Architecture
@@ -33,12 +35,17 @@ User / CLI / Dashboard
 ## API
 
 ### Health
-'''bash
+```bash
 curl http://localhost:8080/health
+```
 
-Ingest a log
+## Ingest a log
+```bash
 curl -X POST http://localhost:8080/logs \
   -H "Content-Type: application/json" \
   -d '{"service":"auth","level":"info","message":"login ok"}'
-Query logs
+```
+## Query logs
+```bash
 curl "http://localhost:8080/logs?limit=5"
+```
