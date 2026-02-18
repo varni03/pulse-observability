@@ -6,6 +6,15 @@ Pulse is a minimal observability backend that ingests structured logs and lets y
 It stores events in Postgres (including JSON attributes) and exposes a simple HTTP API.
 
 ---
+## Why I built this
+
+I wanted to better understand how observability systems work, beyond using existing tools. Most logging platforms abstract away the ingestion and storage layers, so I built Pulse to explore those pieces directly.
+
+This project focuses on the core mechanics of a logging backend: accepting structured events over HTTP, normalizing and storing them efficiently, and supporting flexible queries over time windows and filters. Building it from scratch helped me understand tradeoffs around schema design, indexing for time-series data, and handling semi-structured JSON attributes in Postgres.
+
+Pulse is intentionally minimal, but it serves as a foundation for experimenting with observability features like metrics, alerting, and trace correlation.
+
+--- 
 
 ## What it does
 
