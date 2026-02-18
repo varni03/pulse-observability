@@ -1,6 +1,6 @@
 Pulse
 
-Pulse is a minimal observability backend that ingests structured logs and lets you query them with filters and time windows.
+Pulse is a minimal observability backend that ingests structured logs and lets you query them using filters and time windows.
 It stores events in Postgres (including JSON attributes) and exposes a simple HTTP API.
 
 What it does
@@ -9,7 +9,7 @@ Ingest structured log events (service, level, message, optional trace_id / span_
 
 Query recent logs with filters: service, level, since, until, limit
 
-Stores data in Postgres with indexes for fast time-based queries
+Store data in Postgres with indexes for fast time-based queries
 
 Architecture
 Client / Service
