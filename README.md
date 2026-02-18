@@ -6,6 +6,7 @@ Pulse is a minimal observability backend that ingests structured logs and lets y
 It stores events in Postgres (including JSON attributes) and exposes a simple HTTP API.
 
 ---
+
 ## Why I built this
 
 I built Pulse to better understand how observability systems work at a systems level. Instead of relying on existing logging platforms, I wanted to implement the ingestion, storage, and query layers myself and see the tradeoffs firsthand.
@@ -16,11 +17,26 @@ Pulse is intentionally small, but it provides a base for experimenting with idea
 
 --- 
 
+## What I learned
+
+Building Pulse helped me better understand the foundations of observability systems and backend infrastructure.
+
+- **Time-series data modeling:** Designing schemas and indexes for efficient queries over time windows.
+- **Structured vs semi-structured data:** Storing flexible attributes using JSONB while keeping core fields indexed.
+- **Query design tradeoffs:** Supporting flexible filters without overly complex SQL or performance penalties.
+- **API ergonomics:** Designing ingestion and query endpoints that are simple but composable.
+- **Minimal infrastructure thinking:** Building something small but extensible, with a clear path to metrics, alerting, and tracing.
+
+This project gave me a much stronger intuition for how logging and observability tools work internally.
+
+---
+
 ## What it does
 
 - Ingest structured log events (service, level, message, optional trace_id / span_id, and JSON attributes)
 - Query recent logs with filters: service, level, since, until, limit
 - Store data in Postgres with indexes for fast time-based queries
+
 ---
 
 ## Architecture
