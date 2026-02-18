@@ -13,18 +13,18 @@ It stores events in Postgres (including JSON attributes) and exposes a simple HT
 ---
 
 ## Architecture
-Client / Service
-|
-| POST /logs (JSON)
-v
+ Client / Service
+   |
+   |  POST /logs (JSON)
+   v
 Pulse API (Go)
-|
-| INSERT (service upsert + event)
-v
+   |
+   |  INSERT (service upsert + event)
+   v
 Postgres (events + attributes JSONB)
-|
-| GET /logs?filters
-v
+   |
+   |  GET /logs?filters
+   v
 User / CLI / Dashboard
 
 
@@ -33,8 +33,9 @@ User / CLI / Dashboard
 ## API
 
 ### Health
-```bash
+'''bash
 curl http://localhost:8080/health
+
 Ingest a log
 curl -X POST http://localhost:8080/logs \
   -H "Content-Type: application/json" \
