@@ -49,3 +49,11 @@ curl -X POST http://localhost:8080/logs \
 ```bash
 curl "http://localhost:8080/logs?limit=5"
 ```
+
+---
+
+Built with Go + Postgres.  
+Pulse is a minimal observability backend focused on simplicity, performance, and extensibility.
+
+
+
